@@ -23,7 +23,8 @@
     "@adonisjs/fold": "^4.0.8",
     "@adonisjs/framework": "^5.0.7",
     "@adonisjs/ignitor": "^2.0.6",
-    "@adonisjs/lucid": "^5.0.4"
+    "@adonisjs/lucid": "^5.0.4",
+    "mysql": "^2.15.0"
   },
   "devDependencies": {},
   "autoload": {
