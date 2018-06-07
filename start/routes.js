@@ -18,3 +18,12 @@ const Route = use('Route')
 Route.get('/', ({ request }) => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.group(() => {
+  Route.get('/', 'ProductController.index')
+  Route.post('/', 'ProductController.store')
+  Route.get('/:id', 'ProductController.show').middleware(['findProduct'])
+  Route.patch('/:id', 'ProductController.update').middleware(['findProduct'])
+  Route.delete('/:id', 'ProductController.destroy').middleware(['findProduct'])
+})
+.prefix('api/products')
