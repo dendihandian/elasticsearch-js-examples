@@ -129,10 +129,17 @@ class ProductController {
       index: Product.INDEX,
       q: query,
     })
-    
+
+    let data = []
+    if (products.hits.hits) {
+      products.hits.hits.forEach(function(product) {
+        data.push(product._source)
+      })
+    }
+
     response.status(200).json({
       message: 'Here is your search result',
-      data: products,
+      data: data,
     })
   }
 }
