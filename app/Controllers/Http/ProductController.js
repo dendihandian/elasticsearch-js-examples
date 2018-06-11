@@ -123,6 +123,18 @@ class ProductController {
       id
     })
   }
+
+  async search ({ request, response, params: {query} }) {
+    const products = await esClient.search({
+      index: Product.INDEX,
+      q: query,
+    })
+    
+    response.status(200).json({
+      message: 'Here is your search result',
+      data: products,
+    })
+  }
 }
 
 module.exports = ProductController

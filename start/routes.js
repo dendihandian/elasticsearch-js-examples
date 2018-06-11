@@ -25,5 +25,6 @@ Route.group(() => {
   Route.get('/:id', 'ProductController.show').middleware(['findProduct'])
   Route.patch('/:id', 'ProductController.update').middleware(['findProduct'])
   Route.delete('/:id', 'ProductController.destroy').middleware(['findProduct'])
+  Route.get('search/:query', 'ProductController.search')
 })
 .prefix('api/products')
