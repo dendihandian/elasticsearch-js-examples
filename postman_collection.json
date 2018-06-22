@@ -21,12 +21,10 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3333/api/products",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products"
@@ -50,12 +48,10 @@
 							"raw": "{\n  \"name\": \"Monster Cookies\",\n  \"stock\": 8,\n  \"price\": 200,\n  \"description\": \"Delicious cookies\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/api/products",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products"
@@ -76,12 +72,10 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3333/api/products/1",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products/1",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -106,12 +100,10 @@
 							"raw": "{\n  \"name\": \"Butter Cookies\",\n  \"stock\": 7,\n  \"price\": 150,\n  \"description\": \"delicious butter cookies \"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/api/products/1",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products/1",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -136,12 +128,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/api/products/10",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products/10",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -163,12 +153,10 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3333/api/products/search/cookies",
-							"protocol": "http",
+							"raw": "{{adonis_server}}/api/products/search/cookies",
 							"host": [
-								"localhost"
+								"{{adonis_server}}"
 							],
-							"port": "3333",
 							"path": [
 								"api",
 								"products",
@@ -196,12 +184,10 @@
 					"raw": "{\n  \"name\": \"Dendi Handian\",\n  \"email\": \"dendihandian@gmail.com\",\n  \"password\" : \"abcd\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3333",
-					"protocol": "http",
+					"raw": "{{adonis_server}}",
 					"host": [
-						"localhost"
-					],
-					"port": "3333"
+						"{{adonis_server}}"
+					]
 				}
 			},
 			"response": []
