@@ -14,15 +14,27 @@ const esClient = new elasticsearch.Client({
 })
 
 class ProductController {
-  async index ({ response }) {
-    const products = await esClient.search({
+  async index ({ request, response }) {
+
+    let params = {
       index: Product.INDEX,
       body: {
         query: {
           match_all: {}
         }
       },
-    })
+    }
+
+    const { q } = request.get()
+
+    if (q) {
+      params = {
+        index: Product.INDEX,
+        q: q
+      }
+    }
+
+    const products = await esClient.search(params)
 
     let data = []
     if (products.hits.hits) {

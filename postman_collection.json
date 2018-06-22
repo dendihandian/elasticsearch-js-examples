@@ -34,6 +34,36 @@
 					"response": []
 				},
 				{
+					"name": "Products (Search)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{adonis_server}}/api/products?q=cookies",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "cookies"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Product",
 					"request": {
 						"method": "POST",
@@ -142,7 +172,7 @@
 					"response": []
 				},
 				{
-					"name": "Products (Search)",
+					"name": "Products Search",
 					"request": {
 						"method": "GET",
 						"header": [
