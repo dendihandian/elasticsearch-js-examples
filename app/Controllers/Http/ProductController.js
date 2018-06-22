@@ -15,11 +15,25 @@ const esClient = new elasticsearch.Client({
 
 class ProductController {
   async index ({ response }) {
-    const products = await Product.all()
+    const products = await esClient.search({
+      index: Product.INDEX,
+      body: {
+        query: {
+          match_all: {}
+        }
+      },
+    })
+
+    let data = []
+    if (products.hits.hits) {
+      products.hits.hits.forEach(function(product) {
+        data.push(product._source)
+      })
+    }
 
     response.status(200).json({
       message: 'Here are your products',
-      data: products
+      data: data,
     })
   }
 
