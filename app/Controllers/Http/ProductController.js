@@ -153,7 +153,17 @@ class ProductController {
   async search ({ request, response, params: {query} }) {
     const products = await esClient.search({
       index: Product.INDEX,
-      q: query,
+      body: {
+          query: {
+            // match: {
+            //   slug: query,
+            // }
+            multi_match: {
+              query: query,
+              fields: ['name', 'slug', 'description'],
+            }
+          }
+        }
     })
 
     let data = []
