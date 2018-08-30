@@ -1,13 +1,12 @@
 {
 	"info": {
 		"_postman_id": "f489d2de-31a2-43d0-9c1d-4974327af038",
-		"name": "Adonis Elasticsearch Examples",
+		"name": "Elasticsearch JS Examples",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Products",
-			"description": "",
 			"item": [
 				{
 					"name": "Products",
@@ -45,7 +44,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{adonis_server}}/api/products?q=cookies",
+							"raw": "{{adonis_server}}/api/products?q=ja",
 							"host": [
 								"{{adonis_server}}"
 							],
@@ -56,7 +55,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "cookies"
+									"value": "ja"
 								}
 							]
 						}
@@ -183,7 +182,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{adonis_server}}/api/products/search/cookies",
+							"raw": "{{adonis_server}}/api/products/search/ja",
 							"host": [
 								"{{adonis_server}}"
 							],
@@ -191,7 +190,294 @@
 								"api",
 								"products",
 								"search",
-								"cookies"
+								"ja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Full Customized Products Search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t  \"match\": {\n\t    \"name\": \"cookies\"\n\t  }\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/products/search",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Contacts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{adonis_server}}/api/contacts",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Monster Cookies\",\n  \"stock\": 8,\n  \"price\": 200,\n  \"description\": \"Delicious cookies\"\n}"
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/contacts",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{adonis_server}}/api/contacts/1",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Butter Cookies\",\n  \"stock\": 7,\n  \"price\": 150,\n  \"description\": \"delicious butter cookies \"\n}"
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/contacts/1",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/contacts/10",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"dendihandian2\",\n\t\"email\": \"dendihandian2@gmail.com\",\n\t\"password\" : \"secret\"\n}"
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/auth/register",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"dendihandian@gmail.com\",\n\t\"password\" : \"secret\"\n}"
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/auth/login",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{adonis_server}}/api/auth/user",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{adonis_server}}/api/auth/logout",
+							"host": [
+								"{{adonis_server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
 							]
 						}
 					},
