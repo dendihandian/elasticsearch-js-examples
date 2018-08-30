@@ -44,7 +44,7 @@ class ProductController {
     }
 
     response.status(200).json({
-      message: 'Here are your products',
+      message: 'Product List',
       data: data,
     })
   }
@@ -76,7 +76,7 @@ class ProductController {
     })
 
     response.status(201).json({
-      message: 'Successfuly created a new product',
+      message: 'Product Created',
       data: product
     })
   }
@@ -89,7 +89,7 @@ class ProductController {
     })
 
     response.status(200).json({
-      message: 'Here is your product',
+      message: 'Product Detail',
       data: product._source
     })
   }
@@ -127,7 +127,7 @@ class ProductController {
     })
 
     response.status(200).json({
-      message: 'Successfuly updated the product',
+      message: 'Product Updated',
       data: product
     })
   }
@@ -145,7 +145,7 @@ class ProductController {
     })
 
     response.status(200).json({
-      message: 'Successfuly deleted the product',
+      message: 'Product Deleted',
       id
     })
   }
@@ -174,7 +174,7 @@ class ProductController {
     }
 
     response.status(200).json({
-      message: 'Here is your search result',
+      message: 'Search Result',
       data: data,
     })
   }

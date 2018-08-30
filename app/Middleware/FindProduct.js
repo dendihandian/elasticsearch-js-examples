@@ -10,7 +10,7 @@ class FindProduct {
 
     if (!product) {
       return response.status(404).json({
-        message: 'Product not found',
+        message: 'Product Not Found',
         id
       })
     }
