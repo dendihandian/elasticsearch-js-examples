@@ -28,3 +28,10 @@ Route.group(() => {
   Route.get('search/:query', 'ProductController.search')
 })
 .prefix('api/products')
+
+Route.group(() => {
+  Route.post('register', 'AuthController.register')
+  Route.post('login', 'AuthController.login')
+  Route.get('user', 'AuthController.user').middleware(['auth'])
+  Route.post('logout', 'AuthController.logout').middleware(['auth'])
+}).prefix('api/auth')
